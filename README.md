@@ -8,9 +8,9 @@ The canonical dataset page is [btugraph.com/data](https://btugraph.com/data/). E
 
 - Edition: `2026-09-04`
 - Schema version: `4`
-- Companies: `50`
-- Graph nodes: `214`
-- Graph relationships: `900`
+- Companies: `66`
+- Graph nodes: `286`
+- Graph relationships: `1085`
 - Access: no authentication required
 - Formats: JSON, CSV, and OpenAPI 3.1
 
