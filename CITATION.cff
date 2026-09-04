@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using the metadata below."
+title: "BTU Graph energy company knowledge graph"
+type: dataset
+authors:
+  - name: "BTU Graph, Oil Price API"
+version: "2026-09-04"
+date-released: 2026-09-04
+url: "https://btugraph.com/data/"
+repository-code: "https://github.com/OilpriceAPI/btugraph-data"
+license: CC-BY-4.0
+abstract: "A source-reviewed graph connecting energy companies, sectors, capabilities, markets, regions, workflows, software products, market-data requirements, and operational decisions."
+keywords:
+  - energy
+  - knowledge graph
+  - companies
+  - commodity markets
+  - open data
+

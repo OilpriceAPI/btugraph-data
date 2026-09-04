@@ -1,0 +1,41 @@
+{
+  "title": "BTU Graph energy company knowledge graph",
+  "edition": "2026-09-04",
+  "schemaVersion": 4,
+  "sourceGeneratedAt": "2026-09-04T16:32:03.590Z",
+  "publisher": {
+    "name": "BTU Graph",
+    "parentOrganization": "Oil Price API",
+    "url": "https://btugraph.com"
+  },
+  "license": {
+    "url": "https://btugraph.com/data/#license",
+    "scope": "BTU Graph-authored directory metadata and editorial relationship classifications; third-party marks and source materials are excluded.",
+    "attribution": "BTU Graph — https://btugraph.com/data/"
+  },
+  "canonicalDataset": "https://btugraph.com/data/",
+  "repository": "https://github.com/OilpriceAPI/btugraph-data",
+  "counts": {
+    "companies": 50,
+    "nodes": 214,
+    "edges": 900,
+    "apiPaths": 5
+  },
+  "files": {
+    "graph.json": {
+      "source": "https://btugraph.com/graph.json",
+      "bytes": 196375,
+      "sha256": "d812b7b030a1a321f7af3d860fb4ca485f9c3f7d83c04e4d9f340564ebc8d384"
+    },
+    "companies.csv": {
+      "source": "https://btugraph.com/companies.csv",
+      "bytes": 35323,
+      "sha256": "2e369c87a052d414ce846acec20d57d1a20ec62e35683eb5b952a11b273437c6"
+    },
+    "openapi.json": {
+      "source": "https://btugraph.com/openapi.json",
+      "bytes": 3991,
+      "sha256": "e905c726bf9eb028cbe4a99fcad672c81a0f1a10d726e83d826a699356036731"
+    }
+  }
+}

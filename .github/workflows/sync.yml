@@ -1,0 +1,48 @@
+name: Check canonical data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: btugraph-data-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Sync canonical snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run sync
+      - name: Open an update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: automation/sync-live-data
+        run: |
+          if git diff --quiet; then
+            echo "Canonical exports are unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add data SHA256SUMS README.md CITATION.cff
+          git commit -m "data: sync canonical BTU Graph snapshot"
+          git push --force-with-lease origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "data: sync canonical BTU Graph snapshot" \
+            --body "Automated refresh from the canonical public BTU Graph exports. Integrity checks run in CI." \
+            || gh pr edit "$BRANCH" --title "data: sync canonical BTU Graph snapshot"
