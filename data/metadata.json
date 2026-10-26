@@ -2,7 +2,7 @@
   "title": "BTU Graph energy company knowledge graph",
   "edition": "2026-09-04",
   "schemaVersion": 4,
-  "sourceGeneratedAt": "2026-10-09T12:44:22.597Z",
+  "sourceGeneratedAt": "2026-10-17T22:12:04.796Z",
   "publisher": {
     "name": "BTU Graph",
     "parentOrganization": "Oil Price API",
@@ -25,7 +25,7 @@
     "graph.json": {
       "source": "https://btugraph.com/graph.json",
       "bytes": 245718,
-      "sha256": "12112e444562a6c168deee92a1d95f94968f3c3221146717e362aba5db828ccc"
+      "sha256": "cd96a05d009273eaee5daf121f2eda92260a2ad12603577374791a5f522200a1"
     },
     "companies.csv": {
       "source": "https://btugraph.com/companies.csv",
