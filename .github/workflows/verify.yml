@@ -3,6 +3,10 @@ name: Verify public snapshot
 on:
   push:
   pull_request:
+  # The sync job dispatches this on its branch: pushes made with the
+  # workflow GITHUB_TOKEN do not trigger push/pull_request runs, so the
+  # required 'Snapshot integrity' check never appeared on the bot PR.
+  workflow_dispatch:
 
 permissions:
   contents: read

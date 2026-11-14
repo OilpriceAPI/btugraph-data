@@ -6,6 +6,7 @@ on:
     - cron: "17 13 * * 1"
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -46,3 +47,6 @@ jobs:
             --title "data: sync canonical BTU Graph snapshot" \
             --body "Automated refresh from the canonical public BTU Graph exports. Integrity checks run in CI." \
             || gh pr edit "$BRANCH" --title "data: sync canonical BTU Graph snapshot"
+          # GITHUB_TOKEN pushes do not trigger CI; workflow_dispatch is the
+          # documented exception, and its check run attaches to the head SHA.
+          gh workflow run verify.yml --ref "$BRANCH"
